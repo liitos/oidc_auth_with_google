@@ -1,0 +1,17 @@
+{% if current_user.is_authenticated %}
+  <p>Login was succesful. </p> 
+  <p>Userinfo:  </p> 
+  <li>Sub: {{ current_user.id }}</li>
+  <li>Given name: {{ current_user.given_name }}</li>
+  <li>Family name: {{ current_user.family_name }}</li>
+  <li>Email: {{ current_user.email }}</li>
+  <li>Email is verified: {{ current_user.email_verified }}</li>
+  <li>User locale: {{ current_user.locale }}</li>
+  <div><p>Profile Picture:</p>
+    <img src="{{ current_user.picture }}" alt="Profile pic"></img></div>
+
+  <a class="button" href="/logout">Logout</a>    
+{% else %}
+  <p>You're not logged in. Use Google login at:</p>
+  <a class="button" href="/login">Google Login</a>  
+{% endif %}

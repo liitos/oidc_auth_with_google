@@ -1,0 +1,6 @@
+*.tar*
+*.zip
+oauth/
+__pycache__
+*-workspace
+launch.sh
